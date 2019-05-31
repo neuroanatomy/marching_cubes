@@ -1,0 +1,7 @@
+/Users/roberto/Documents/annex-foldgraph/bin/marching_cubes/CMakeFiles/install/local.dir
+/Users/roberto/Documents/annex-foldgraph/bin/marching_cubes/CMakeFiles/install/strip.dir
+/Users/roberto/Documents/annex-foldgraph/bin/marching_cubes/CMakeFiles/install.dir
+/Users/roberto/Documents/annex-foldgraph/bin/marching_cubes/CMakeFiles/list_install_components.dir
+/Users/roberto/Documents/annex-foldgraph/bin/marching_cubes/CMakeFiles/rebuild_cache.dir
+/Users/roberto/Documents/annex-foldgraph/bin/marching_cubes/CMakeFiles/edit_cache.dir
+/Users/roberto/Documents/annex-foldgraph/bin/marching_cubes/CMakeFiles/marching_cubes.dir
