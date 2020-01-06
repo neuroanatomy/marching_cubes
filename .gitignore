@@ -34,3 +34,5 @@
 .DS_Store
 ._.DS_Store
 
+CMakeCache.txt
+build
