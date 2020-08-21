@@ -98,6 +98,14 @@ int main(int argc, char * argv[])
     F2=F1;
   }
 
+  // scale voxel size
+  for(i=0;i<V2.rows();i++)
+  {
+    V2(i,0) *= xvox;
+    V2(i,1) *= yvox;
+    V2(i,2) *= zvox;
+  }
+
   // Save result
   igl::writePLY(argv[5],V2,F2,true);
 
