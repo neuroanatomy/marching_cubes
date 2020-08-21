@@ -34,6 +34,7 @@ int main(int argc, char * argv[])
   float decimation;
   short *vol;
  
+  cout<<"Marching cubes"<<endl;
   cout<<"in.bin: "<<argv[1]<<endl;
   cout<<"in.txt: "<<argv[2]<<endl;
   cout<<"in level: "<<argv[3]<<endl;
@@ -85,11 +86,21 @@ int main(int argc, char * argv[])
   cout<<"ntris: "<<F1.rows()<<endl;
 
   // decimate
-  cout<<"Decimating..."<<endl;
-  igl::decimate(V1,F1,F1.rows()/decimation,V2,F2,J);
-  cout<<"ntris: "<<F2.rows()<<endl;
+  if(decimation>1)
+  {
+    cout<<"Decimating..."<<endl;
+    igl::decimate(V1,F1,F1.rows()/decimation,V2,F2,J);
+    cout<<"ntris: "<<F2.rows()<<endl;
+  }
+  else
+  {
+    V2=V1;
+    F2=F1;
+  }
 
   // Save result
   igl::writePLY(argv[5],V2,F2,true);
+
+  cout<<"Done."<<endl;
 
 }
