@@ -94,6 +94,7 @@ int main(int argc, char * argv[])
   }
   else
   {
+    cout<<"No decimation used."<<endl;
     V2=V1;
     F2=F1;
   }
@@ -107,7 +108,7 @@ int main(int argc, char * argv[])
   }
 
   // Save result
-  igl::writePLY(argv[5],V2,F2,true);
+  igl::writePLY(argv[5],V2,F2,false);
 
   cout<<"Done."<<endl;
 
