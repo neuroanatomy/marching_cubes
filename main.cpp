@@ -5,10 +5,8 @@
 #include <iostream>
 #include <igl/writePLY.h>
 #include <igl/decimate.h>
-
 #include <stdio.h>
 #include <stdlib.h>
-
 
 int main(int argc, char * argv[])
 {
@@ -40,10 +38,10 @@ int main(int argc, char * argv[])
   cout<<"in decimation: "<<argv[4]<<endl;
   cout<<"out.ply: "<<argv[5]<<endl;
 
-  level=atof(argv[3]);
-  decimation=atof(argv[4]);
+  level = atof(argv[3]);
+  decimation = atof(argv[4]);
 
-  f=fopen(argv[2],"r");
+  f = fopen(argv[2],"r");
   fscanf(f, "dim: %i %i %i ", &xdim, &ydim, &zdim);
   fscanf(f, "dataType: %s ", datatype);
   fscanf(f, "voxelSize: %f %f %f ", &xvox, &yvox, &zvox);
@@ -51,7 +49,7 @@ int main(int argc, char * argv[])
 
   sz = xdim*ydim*zdim;
   vol = (short*)calloc(sz,sizeof(short));
-  f=fopen(argv[1],"r");
+  f = fopen(argv[1],"r");
   fread(vol,sz,sizeof(short),f);
   fclose(f);
 
@@ -61,11 +59,11 @@ int main(int argc, char * argv[])
   VectorXd S(sz,1);
 
   int i, j, k, ijk;
-  for(k=0; k<zdim; k++)
+  for(k = 0; k < zdim; k++)
   {
-    for(j=0; j<ydim; j++)
+    for(j = 0; j < ydim; j++)
     {
-      for(i=0; i<xdim; i++)
+      for(i = 0; i < xdim; i++)
       {
         ijk = i + xdim*j + xdim*ydim*k;
         GV.row(ijk) = RowVector3d((double)i,(double)j,(double)k);
@@ -99,15 +97,15 @@ int main(int argc, char * argv[])
   }
 
   // scale voxel size
-  for(i=0;i<V2.rows();i++)
+  for(i = 0; i < V2.rows(); i++)
   {
-    V2(i,0) *= xvox;
-    V2(i,1) *= yvox;
-    V2(i,2) *= zvox;
+    V2(i, 0) *= xvox;
+    V2(i, 1) *= yvox;
+    V2(i, 2) *= zvox;
   }
 
-  // Save result
-  igl::writePLY(argv[5],V2,F2,igl::FileEncoding::Ascii);
+  // save result
+  igl::writePLY(argv[5], V2, F2, igl::FileEncoding::Ascii);
 
   cout<<"Done."<<endl;
 
