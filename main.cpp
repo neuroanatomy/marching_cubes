@@ -6,7 +6,6 @@
 #include <igl/writePLY.h>
 #include <igl/decimate.h>
 
-
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -108,7 +107,7 @@ int main(int argc, char * argv[])
   }
 
   // Save result
-  igl::writePLY(argv[5],V2,F2,false);
+  igl::writePLY(argv[5],V2,F2,igl::FileEncoding::Ascii);
 
   cout<<"Done."<<endl;
 
